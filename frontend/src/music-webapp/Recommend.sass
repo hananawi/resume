@@ -1,0 +1,86 @@
+.carousel
+  position: relative
+
+  .pic-wrapper
+    width: 730px
+    height: 285px
+    overflow: hidden
+    margin: auto
+    display: flex
+    position: relative
+
+    img
+      width: 730px
+      position: absolute
+      top: 0
+      left: 0
+      opacity: 0
+      transform: translateY(0)
+      transition: transform 0.2s ease
+    img.prev
+      opacity: 1
+      transform: translateX(-100%)
+    img.cur
+      opacity: 1
+      transform: translateX(0)
+      z-index: 5
+    img.next
+      opacity: 1
+      transform: translateX(100%)
+
+  i
+    position: absolute
+    top: 50%
+    font-size: 2rem
+    cursor: pointer
+    color: #000
+    z-index: 10
+  i.fa-angle-left
+    left: 0
+    transform: translate(10rem, calc(-50% - 0.75rem))
+  i.fa-angle-right
+    right: 0
+    transform: translate(-10rem, calc(-50% - 0.75rem))
+
+  .indicators
+    ul
+      margin: 1rem auto
+      padding: 0
+      width: fit-content
+      display: flex
+      li
+        width: 0.5rem
+        height: 0.5rem
+        margin-right: 0.5rem
+        background-color: #aaa69d
+        border-radius: 50%
+        cursor: pointer
+      li.current
+        background-color: #ff5252
+
+.recommend-music
+  background-color: #ff5252
+  position: relative
+  margin-bottom: 3rem
+  padding: 1rem
+  .music-cards
+    display: flex
+    flex-wrap: wrap
+    justify-content: space-around
+    .music-card
+      flex-basis: 20rem
+      color: #000
+
+      .track-cover-img
+        float: left
+        width: 5rem
+        height: 5rem
+        cursor: pointer
+
+  .audio-player
+    position: fixed
+    bottom: 0
+    left: 50%
+    width: 100%
+    display: block
+    transform: translateX(-50%)

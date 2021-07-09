@@ -1,0 +1,16 @@
+INSERT INTO staff (staff_name,staff_sex,staff_phone,staff_city) 
+VALUES ("王五","男","12345678","广东广州")
+
+INSERT INTO staff (staff_name,staff_sex,staff_phone,staff_city) 
+VALUES ("赵六","男","32424","广东深圳")
+
+SELECT * FROM staff WHERE staff_id = 1
+
+SELECT * FROM staff WHERE staff_name ="王五" && staff_sex="男" && staff_phone="12345678" && staff_city="广东广州"
+
+
+UPDATE staff SET staff_name="修改一次王五" WHERE staff_id=1
+
+UPDATE staff SET staff_name="修改两次次王五" WHERE staff_name ="修改一次王五" && staff_sex="男" && staff_phone="12345678" && staff_city="广东广州"
+
+DELETE FROM staff WHERE staff_id = 1;

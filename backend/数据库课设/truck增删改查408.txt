@@ -1,0 +1,13 @@
+INSERT INTO truck(truck_load,truck_location) 
+VALUES (1000,"广州")
+
+INSERT INTO truck (truck_load,truck_location) 
+VALUES (2000,"深圳")
+
+SELECT * FROM truck WHERE truck_id = 1
+
+SELECT * FROM truck WHERE truck_load =1000 && truck_location="广州"
+
+UPDATE truck SET truck_load=3000 WHERE truck_load=1000
+
+DELETE FROM truck WHERE truck_id=1;

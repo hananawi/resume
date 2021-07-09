@@ -1,0 +1,42 @@
+.random-choice-picker {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #2b88f0;
+    height: 100vh;
+}
+
+.random-choice-picker h3 {
+    margin: 2rem 0;
+    margin-top: 0;
+    width: 450px;
+    text-align: center;
+}
+
+textarea {
+    width: 400px;
+    height: 100px;
+    padding: 10px;
+}
+
+.tags {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 1rem;
+    width: 400px;
+}
+
+.tag {
+    border-radius: 10px;
+    margin: 5px;
+    min-width: 3rem;
+    text-align: center;
+    background-color: #f9ca24;
+    padding: 0.5rem 1rem;
+    font-size: 1.5rem;
+}
+
+.tag.active {
+    background-color: #badc58;
+}

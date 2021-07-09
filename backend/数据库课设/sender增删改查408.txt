@@ -1,0 +1,16 @@
+INSERT INTO sender (sender_name,sender_sex,sender_phone,sender_address) 
+VALUES ("田七","男","23924","广东广州")
+
+INSERT INTO sender (sender_name,sender_sex,sender_phone,sender_address) 
+VALUES ("林八","男","32424","广东深圳")
+
+SELECT * FROM sender WHERE sender_id = 1
+
+SELECT * FROM sender WHERE sender_name ="田七" && sender_sex="男" && sender_phone="23924" && sender_address="广东广州"
+
+
+UPDATE sender SET sender_name="修改一次田七" WHERE sender_id=1
+
+UPDATE sender SET sender_name="修改两次田七" WHERE sender_name ="修改一次田七" && sender_sex="男" && sender_phone="23924" && sender_address="广东广州"
+
+DELETE FROM sender WHERE sender_id = 1;

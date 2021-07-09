@@ -1,0 +1,121 @@
+// /* .App {
+//   text-align: center;
+// }
+
+// .App-logo {
+//   height: 40vmin;
+//   pointer-events: none;
+// }
+
+// @media (prefers-reduced-motion: no-preference) {
+//   .App-logo {
+//     animation: App-logo-spin infinite 20s linear;
+//   }
+// }
+
+// .App-header {
+//   background-color: #282c34;
+//   min-height: 100vh;
+//   display: flex;
+//   flex-direction: column;
+//   align-items: center;
+//   justify-content: center;
+//   font-size: calc(10px + 2vmin);
+//   color: white;
+// }
+
+// .App-link {
+//   color: #61dafb;
+// }
+
+// @keyframes App-logo-spin {
+//   from {
+//     transform: rotate(0deg);
+//   }
+//   to {
+//     transform: rotate(360deg);
+//   }
+// } */
+
+body
+  height: 100vh
+  background-color: #f1f2f6
+  // overflow: hidden
+  > div
+    height: 100%
+
+  .content-cover
+    position: fixed
+    top: 0
+    left: 0
+    width: 0
+    height: 0
+    // border-bottom-right-radius: 50%
+    background-color: rgba(0, 0, 0, 0)
+    transition: background-color 0.5s ease
+    z-index: 1
+
+  .content-cover.active
+    width: 100vw
+    height: 100vh
+    background-color: rgba(0, 0, 0, 0.5)
+    z-index: 100
+
+  .outer-box
+    height: 100%
+    position: relative
+    overflow-x: hidden
+
+  .catalog.hidden
+    translate: -100%
+
+  .catalog
+    position: fixed
+    left: 0
+    padding: 2rem
+    background-color: #2C3A47
+    width: 17rem
+    height: 100%
+    transition: translate 0.5s ease
+    z-index: 100
+
+    ul
+      padding: 0
+      width: 100%
+      color: #fff
+
+      li  // LVHA: :link, :visited, :hover, :active
+        a:visited
+          color: #fff
+
+        a
+          text-decoration: none
+          color: #fff
+
+  .content-box
+    width: 100%
+    height: 100%
+    color: #fff
+
+  .menu-icon
+    position: fixed
+    top: 1rem
+    left: 1rem
+    z-index: 1
+    color: #ffa502
+    cursor: pointer
+    font-size: 2rem
+    z-index: 200
+
+ul
+  li
+    list-style: none
+    a
+      color: #000
+      text-decoration: none
+    a:link
+      color: #000
+    a:visited
+      color: #000
+
+// LVHA: :link, :visited, :hover, :active

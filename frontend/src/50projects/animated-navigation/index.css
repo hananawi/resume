@@ -1,0 +1,89 @@
+.animated-navigation {
+    background-color: #eafbff;
+    background-image:
+        linear-gradient(to bottom, #eafbff 0%, #eafbff 50%, #5290f9 50%, #5290f9 100%);
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.animated-navigation nav {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 380px;
+    background-color: #fff;
+    padding: 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    border-radius: 3px;
+    transition: width 1s linear;
+}
+
+.animated-navigation nav.active {
+    width: 70px;
+}
+
+.animated-navigation nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    transition: width 1s linear;
+}
+
+.animated-navigation nav.active ul {
+    width: 0;
+    pointer-events: none;
+}
+
+.animated-navigation nav ul li a {
+    margin: 0 10px;
+    text-decoration: none;
+    color: #000;
+    font-size: 1.1rem;
+    transition: opacity 0.5s linear;
+}
+
+.animated-navigation nav.active ul li {
+    opacity: 0;
+}
+
+.animated-button {
+    border: none;
+    background-color: #fff;
+    position: relative;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+    padding: 0;
+}
+
+.animated-button div {
+    background-color: #5290f9;
+    width: 1.5rem;
+    height: 2px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    translate: -50% -50%;
+    transition: transform 1s linear;
+}
+
+.animated-button div:first-child {
+    transform: rotate(45deg);
+}
+
+.animated-button div:last-child {
+    transform: rotate(-45deg);
+}
+
+.animated-navigation nav.active .animated-button div:first-child {
+    transform: rotate(765deg);
+}
+
+.animated-navigation nav.active .animated-button div:last-child {
+    transform: rotate(-765deg);
+}

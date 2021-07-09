@@ -1,0 +1,13 @@
+INSERT INTO goods (goods_name,goods_type,goods_weight) 
+VALUES ("速冻饺子","食品",15)
+
+INSERT INTO goods (goods_name,goods_type,goods_weight) 
+VALUES ("水杯","生活用品",5)
+
+SELECT * FROM goods WHERE goods_id = 1
+
+SELECT * FROM goods WHERE goods_name ="速冻饺子" && goods_type="食品" && goods_weight=15
+
+UPDATE goods SET goods_name="熟食饺子" WHERE goods_id=1
+
+DELETE FROM goods WHERE goods_id = 1;

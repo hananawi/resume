@@ -1,0 +1,13 @@
+INSERT INTO receiver (receiver_name,receiver_sex,receiver_phone,receiver_address) 
+VALUES ("张三","男","12345678","广东广州")
+
+INSERT INTO receiver (receiver_name,receiver_sex,receiver_phone,receiver_address) 
+VALUES ("李四","男","1231321231","广东深圳")
+
+SELECT * FROM receiver WHERE receiver_id = 1
+SELECT * FROM receiver WHERE receiver_name="张三" && receiver_sex="男" && receiver_phone="12345678" && receiver_address="广东广州"
+
+UPDATE receiver SET receiver_name="修改_张三",receiver_sex="男" WHERE receiver_id=1
+UPDATE receiver SET receiver_name="修改_张三",receiver_sex="女" WHERE receiver_name="张三" && receiver_sex="男" && receiver_phone="12345678" && receiver_address="广东广州"
+
+DELETE FROM receiver WHERE receiver_id =1 

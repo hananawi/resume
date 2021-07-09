@@ -1,0 +1,20 @@
+#这会报错，有外键约束
+INSERT INTO express (staff_id,sender_id,receiver_id,goods_id,express_price,express_pay,express_createtime,express_arrivetime,
+express_pretime) 
+VALUES (1,1,1,1,1,"unkown","2020-04-08","2020-04-09","2020-04-09")
+
+
+INSERT INTO express (staff_id,sender_id,receiver_id,goods_id,express_price,express_pay,express_createtime,express_arrivetime,
+express_pretime) 
+VALUES (2,2,2,2,10,"unkown1","2020-04-08","2020-04-09","2020-04-09")
+
+INSERT INTO express (staff_id,sender_id,receiver_id,goods_id,express_price,express_pay,express_createtime,express_arrivetime,
+express_pretime) 
+VALUES (2,2,2,2,20,"unkown2","2020-04-08","2020-04-10","2020-04-10")
+
+
+SELECT * FROM express WHERE express_id = 1
+
+UPDATE express SET express_price=15 WHERE express_id=1
+
+DELETE FROM express WHERE express_id = 1;
