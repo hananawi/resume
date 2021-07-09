@@ -1,7 +1,0 @@
-*.pdf
-node_modules
-.vscode
-*.db
-NeteaseCloudMusicApi
-*-lock.json
-build
