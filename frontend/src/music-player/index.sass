@@ -1,0 +1,74 @@
+.music-player
+  height: 100vh
+  background-color: #fd79a72c
+  display: flex
+  align-items: center
+  justify-content: center
+  color: #2d3436
+  .container
+    padding: 2rem 0 1rem
+    width: 60%
+    background-color: #fd79a721
+    display: flex
+    flex-direction: column
+    justify-content: space-around
+    align-items: center
+    .player-container
+      width: 100%
+      margin-block-start: 6rem
+      position: relative
+      .progress-bar-container
+        position: absolute
+        top: 0
+        left: 50%
+        transform: translate(-50%, 0)
+        padding: 1rem
+        width: 80%
+        transition: transform 0.5s ease
+        background-color: rgba(255, 255, 255, 0.3)
+        border-top-left-radius: 10px
+        border-top-right-radius: 10px
+        .progress-bar
+          height: 4px
+          background-color: #fff
+          .progress
+            height: 100%
+            width: 0
+            background-color: #d63031
+      .player-bar
+        position: relative
+        display: flex
+        align-items: center
+        justify-content: space-around
+        padding: 0 2rem
+        background-color: #dfe6e9
+        border-radius: 20px
+        box-shadow: 0 20px 20px 0 rgba(252, 169, 169, 0.6)
+        .img
+          width: 80px
+          height: 80px
+          background-image: url('../assets/music-player/琴弦上.jpg')
+          background-position: center
+          background-size: cover
+          border-radius: 50%
+          animation: img-rotate 8s linear infinite
+          animation-play-state: paused
+        .navigation
+          display: flex
+          justify-content: space-around
+          flex-grow: 1
+          button
+            border: none
+            opacity: 0.5
+    .player-container.active
+      .progress-bar-container
+        transform: translate(-50%, -100%)
+      .player-bar
+        .img
+          animation-play-state: running
+
+@keyframes img-rotate
+  0%
+    transform: rotate(0)
+  100%
+    transform: rotate(360deg)

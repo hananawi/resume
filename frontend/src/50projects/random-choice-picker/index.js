@@ -11,6 +11,9 @@ function f() {
     });
 
     function createChoice(input) {
+        if(!input.endsWith(',')) {
+            input = input + ',';
+        }
         input = input.split(',')
             .filter((val) => val.trim() !== '')
             .map((val) => val.trim());
