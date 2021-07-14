@@ -1,8 +1,8 @@
 {
   "files": {
-    "main.css": "/resume/static/css/main.f78469ed.chunk.css",
-    "main.js": "/resume/static/js/main.7405af9c.chunk.js",
-    "main.js.map": "/resume/static/js/main.7405af9c.chunk.js.map",
+    "main.css": "/resume/static/css/main.88533782.chunk.css",
+    "main.js": "/resume/static/js/main.addc02eb.chunk.js",
+    "main.js.map": "/resume/static/js/main.addc02eb.chunk.js.map",
     "runtime-main.js": "/resume/static/js/runtime-main.ff8d5fbb.js",
     "runtime-main.js.map": "/resume/static/js/runtime-main.ff8d5fbb.js.map",
     "static/js/2.be712686.chunk.js": "/resume/static/js/2.be712686.chunk.js",
@@ -19,7 +19,7 @@
     "惊鹊.png": "/resume/d3dd55a8afc6aeb27ece8803f6a3fffd.png",
     "movie-app.jpg": "/resume/de0512367531c57f68fc98eb60b6fcd3.jpg",
     "index.html": "/resume/index.html",
-    "static/css/main.f78469ed.chunk.css.map": "/resume/static/css/main.f78469ed.chunk.css.map",
+    "static/css/main.88533782.chunk.css.map": "/resume/static/css/main.88533782.chunk.css.map",
     "static/js/2.be712686.chunk.js.LICENSE.txt": "/resume/static/js/2.be712686.chunk.js.LICENSE.txt",
     "static/media/index.sass": "/resume/static/media/password.16706ddf.ttf",
     "static/media/password2.ttf": "/resume/static/media/password2.418cd3c7.ttf",
@@ -30,7 +30,7 @@
   "entrypoints": [
     "static/js/runtime-main.ff8d5fbb.js",
     "static/js/2.be712686.chunk.js",
-    "static/css/main.f78469ed.chunk.css",
-    "static/js/main.7405af9c.chunk.js"
+    "static/css/main.88533782.chunk.css",
+    "static/js/main.addc02eb.chunk.js"
   ]
 }
