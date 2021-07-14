@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link href="https://cdn.bootcdn.net/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
+
+  <title>Resume</title>
+
+  <style>
+    html {
+      padding: 1rem;
+    }
+    body {
+      display: flex;
+      /* width: 70%; */
+      margin: 0 auto;
+      box-shadow: gray;
+      box-shadow: 10px 10px 5px 5px rgba(0, 0, 0, 0.3);
+      -webkit-box-shadow: 10px 10px 5px 5px rgba(0, 0, 0, 0.3);
+      -moz-box-shadow: 10px 10px 5px 5px rgba(0, 0, 0, 0.3);
+    }
+
+    section {
+      padding: 1rem 2rem;
+    }
+
+    aside {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+    }
+
+    aside section {
+      flex: 1;
+    }
+
+    main {
+      flex: 2;
+    }
+
+    aside section:nth-child(1) {
+      background-color: #666979;
+      color: #fff;
+    }
+
+    aside section:nth-child(1) h4 i {
+      color: #fff;
+    }
+
+    aside section:nth-child(2) {
+      background-color: #66697957;
+    }
+
+    aside section:nth-child(3) {
+      background-color: #66697911;
+    }
+
+    section h4 i {
+      width: 1rem;
+      margin-inline-end: 5px;
+      color: #80808080;
+    }
+
+    section h4 {
+      font-weight: normal;
+    }
+
+    section ul li {
+      margin-block-end: 10px;
+    }
+
+    main section h4 {
+      font-size: 1.3rem;
+    }
+  </style>
+</head>
+
+<body>
+  <aside>
+    <section>
+      <h2>慎杰</h2>
+      <h3>前端开发</h3>
+      <h4>
+        <i class="fas fa-envelope"></i>
+        1484740339@qq.com
+      </h4>
+      <h4>
+        <i class="fas fa-phone"></i>
+        13527699361
+      </h4>
+      <h4>
+        <i class="fas fa-map-marker-alt"></i>
+        广州
+      </h4>
+      <h4>
+        <i class="fab fa-github"></i>
+        <a href="https://github.com/hananawi">Github</a>
+      </h4>
+      <h4>
+        <i class="fas fa-globe"></i>
+        <a href="https://hananawi.github.io/resume/">个人主页</a>
+      </h4>
+    </section>
+
+    <section>
+      <h2>学历</h2>
+      <h4>本科</h4>
+      <h4>计算机科学与技术</h4>
+      <h4>华南农业大学</h4>
+      <h4>
+        <i class="fas fa-calendar-alt"></i>
+        2018年9月 - 2022年06月
+      </h4>
+      <h4>2019年CCPC广东省省赛三等奖</h4>
+    </section>
+
+    <section>
+      <h2>技能</h2>
+      <h4>Python (Django)</h4>
+      <h4>Javascript (NodeJS, ReactJS)</h4>
+      <h4>SQL (MySQL)</h4>
+      <h4>HTML5/CSS</h4>
+      <h4>C++</h4>
+      <h4>英语(4级 537分)</h4>
+      <h4>日语(N1 140分)</h4>
+    </section>
+  </aside>
+
+  <main>
+    <section>
+      <h2>实习经历</h2>
+      <h3>前端开发</h3>
+      <h4>深圳市铂岩科技有限公司</h4>
+      <h4>
+        <i class="fas fa-calendar-alt"></i>
+        2020.08 - 2020.09
+      </h4>
+      <ul>
+        <li>根据需求编写前端页面，使用react, typescript</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>项目</h2>
+
+      <h4>个人主页</h4>
+      <ul>
+        <li>使用react制作的一个个人主页，包含自我介绍和4个前端项目。</li>
+        <li>1. 一个简易的web版音乐播放器，有播放，暂停，前一首，后一首，调整进度，调整音量等功能。</li>
+        <li>2. 一个简易的物流信息查询系统，实现的功能有：用户登陆注册等，产看货物的物流信息，发送货物等，后端是用nodejs和sqlite实现的，但是github page上没有后端，所以部分功能不能展示出来。</li>
+        <li>3. 一个查询电影信息的web app，可以显示出电影的名称，简介和评分，还有按标题中的关键字查询的功能，实现了异步加载资源的效果，使用了国外的api接口所以速度可能会有点慢。</li>
+        <li>4. 输入若干个按逗号隔开的项目后可以从里面随机挑选出一个，有动画效果。</li>
+      </ul>
+
+      <h4>基于Django的个人博客开发</h4>
+      <ul>
+        <li>使用Django作为服务端框架，前端使用html, css, javascript和一些第三方库如bootstrap。</li>
+        <li>实现了发帖，删帖，用户注册登录，评论和点赞等功能。</li>
+      </ul>
+
+      <h4>低像素牛头图像超分辨率重建及识别</h4>
+      <ul>
+        <li>构建模型识别不同的牛个体，在实际应用中，从实际场地拍摄到的图片因个种环境因素导致质量不好，所以需要使用超分辨率模型来还原图像，方便接下来使用图像分类模型去分类。</li>
+        <li>超分辨率模型参考了如下模型：SRCNN，RCAN，并以此为基础进行改进。 图像分类模型以resnet50为基础进行改进。 使用的深度学习框架为pytorch。</li>
+      </ul>
+    </section>
+  </main>
+</body>
+
+</html>

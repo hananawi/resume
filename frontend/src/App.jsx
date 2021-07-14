@@ -35,7 +35,7 @@ import { default as MusicPlayer } from './music-player/index.jsx';
 // }
 
 const projectDescs = [
-  '一个简易的web版音乐播放器，有播放，暂停，前一首，后一首，调整进度等功能',
+  '一个简易的web版音乐播放器，有播放，暂停，前一首，后一首，调整进度，调整音量等功能',
   '一个简易的物流信息查询系统，实现的功能有：用户登陆注册等，产看货物的物流信息，发送货物等，后端是用nodejs和sqlite实现的，但是github page上没有后端，所以部分功能不能展示出来',
   '一个查询电影信息的web app，可以显示出电影的名称，简介和评分，还有按标题中的关键字查询的功能，使用了国外的api接口所以速度可能会有点慢',
   '输入若干个按逗号隔开的项目后可以从里面随机挑选出一个，有动画效果'
@@ -48,29 +48,36 @@ const projectImgs = [
   'random-choice-picker.jpg'
 ];
 
+const myProjectLinks = [
+  'music-player',
+  'project',
+  'movie-app',
+  // 'animated-navigation',
+  'random-choice-picker',
+  // 'music-webapp',
+  // 'material-ui-tutorial'
+];
+const myProjects = [
+  MusicPlayer,
+  MyProject,
+  MovieApp,
+  // AnimatedNavigation,
+  RandomChoicePicker,
+  // MusicWebapp,
+  // MaterialUITutorial
+];
+
+const myProjectNames = [
+  '音乐播放器',
+  '物流查询系统',
+  '电影信息查询系统',
+  '随机选择器'
+];
+
 function App() {
   useEffect(() => {
     f();
   }, []);
-
-  const myProjectLinks = [
-    'music-player',
-    'project',
-    'movie-app',
-    // 'animated-navigation',
-    'random-choice-picker',
-    // 'music-webapp',
-    // 'material-ui-tutorial'
-  ];
-  const myProjects = [
-    MusicPlayer,
-    MyProject,
-    MovieApp,
-    // AnimatedNavigation,
-    RandomChoicePicker,
-    // MusicWebapp,
-    // MaterialUITutorial
-  ];
 
   function handleLinkClick(currentIdx) {
     const links = document.querySelectorAll('.catalog ul li a');
@@ -97,15 +104,15 @@ function App() {
           <ul>
             <li>
               <Link
-                to="/"
-                onClick={() => handleLinkClick(0)}>homepage</Link>
+                to="/resume"
+                onClick={() => handleLinkClick(0)}>主页</Link>
             </li>
             {myProjectLinks.map((val, idx) => {
               return (
                 <li
                   key={val}
                   onClick={() => handleLinkClick(idx + 1)}>
-                  <Link to={`/${val}`}>{val}</Link>
+                  <Link to={`/resume/${val}`}>{myProjectNames[idx]}</Link>
                 </li>
               );
             })}
@@ -118,7 +125,7 @@ function App() {
               myProjects.map((val, index) => {
                 return (
                   <Route
-                    path={`/${myProjectLinks[index]}`}
+                    path={`/resume/${myProjectLinks[index]}`}
                     key={myProjectLinks[index]}>
                     {React.createElement(val)}
                   </Route>
@@ -127,7 +134,7 @@ function App() {
             }
 
             <Route
-              path='/'>
+              path='/resume'>
               <header className="homepage">
                 <nav>
                   <ul>
@@ -156,7 +163,7 @@ function App() {
                   {
                     myProjectLinks.map((val, index) => (
                       <div className="card-wrapper" key={val}>
-                        <Link to={`/${val}`}>
+                        <Link to={`/resume/${val}`}>
                           <div className={`card animate ${{
                             0: 'one',
                             1: 'two',
@@ -166,7 +173,7 @@ function App() {
                             }`}>
                             <div className="img"
                             style={{backgroundImage: `url(${require(`./assets/${projectImgs[index]}`).default})`}}></div>
-                            <h4>{val}</h4>
+                            <h4>{myProjectNames[index]}</h4>
                             <div className="desc">{projectDescs[index]}</div>
                           </div>
                         </Link>

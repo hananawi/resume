@@ -44,7 +44,7 @@
     ]
   },
   "proxy": "http://localhost:4000",
-  "homepage": "https://hananawi.github.io",
+  "homepage": "https://hananawi.github.io/resume",
   "devDependencies": {
     "gh-pages": "^3.2.3"
   }
