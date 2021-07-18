@@ -6,7 +6,8 @@
   justify-content: center
   color: #2d3436
   .container
-    padding: 2rem 0 1rem
+    border-radius: 20px
+    padding: 2rem 0 0
     width: 60%
     max-width: 30rem
     background-color: #fd79a721
@@ -30,13 +31,8 @@
         border-top-left-radius: 10px
         border-top-right-radius: 10px
         .progress-bar
-          height: 4px
-          background-color: #fff
-          cursor: pointer
           .progress
-            height: 100%
-            width: 0
-            background-color: #d63031
+
       .player-bar
         position: relative
         display: flex
@@ -62,37 +58,54 @@
           button
             border: none
             opacity: 0.5
-        .volume-control-bar::before
-          font-family: 'Font Awesome 5 Free'
-          font-weight: 900
-          opacity: 0.5
-          content: '\f028'
-          position: absolute
-          top: 0
-          left: 0
-          transform: translate(-120%, -40%)
-        .volume-control-bar.volume-off::before
-          content: '\f6a9'
-        .volume-control-bar
-          margin-inline-start: 2rem
-          position: relative
-          vertical-align: middle
-          width: 4rem
-          height: 4px
-          background-color: #fff
-          cursor: pointer
-          border-radius: 2px
-          .volume-control
-            background-color: #d63031
-            width: 0
-            height: 100%
+        .volume-control-wrapper
+          display: flex
+          align-items: center
+          i
+            opacity: 0.5
+            cursor: pointer
+            width: 18px
+          .volume-control-bar
+            margin-inline-start: 8px
+            position: relative
+            vertical-align: middle
+            width: 4rem
             border-radius: 2px
+            .volume-control
+
     .player-container.active
       .progress-bar-container
         transform: translate(-50%, -100%)
       .player-bar
         .img
           animation-play-state: running
+
+  .dragable-bar-wrapper
+    width: 80%
+    height: 4px
+    cursor: pointer
+    background-color: #fff
+    position: relative
+    vertical-align: middle
+    display: flex
+    align-items: center
+    border-radius: 2px
+    margin: 0 auto
+    .dragable-bar
+      width: 20%
+      height: 100%
+      border-radius: 2px
+      background-color: #d63031
+    .dragable-point
+      position: absolute
+      top: -100%
+      left: 0
+      border-radius: 50%
+      border: 2px #fff solid
+      width: 12px
+      height: 12px
+      background-color: #d63031
+      transform: translate(-50%, 0)
 
 @keyframes img-rotate
   0%

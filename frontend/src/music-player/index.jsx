@@ -15,20 +15,88 @@ const songTitles = [
   '忘川风华录,赤羽 - 易安难安.mp3'
 ];
 
-function MyPage() {
+let mouseDownFlags = Array(2).fill(false);
+
+function DragableBar(props) {
+
   useEffect(() => {
-    f();
+    props.musicAppRef.current.addEventListener('mousemove', handleMouseMove);
+    props.musicAppRef.current.addEventListener('mouseup', handleMouseUp);
   }, []);
 
+  const myRef = useRef(null);
+
+  const handleBarClick = (e) => {
+    // const clickX = e.nativeEvent.offsetX;
+    // console.log('click', e.nativeEvent, clickX);
+    const rect = myRef.current.getBoundingClientRect();
+    const x = Math.max(0, Math.min(myRef.current.clientWidth - 1, e.clientX - rect.left));
+    if (props.changeVar) {
+      props.changeVar(x / myRef.current.clientWidth);
+    }
+  }
+
+  // click事件和mousedown等事件的offsetX的值不一样
+  function handleMouseDown(e) {
+    mouseDownFlags[props.index] = true;
+    // console.log('mousedown', e.nativeEvent, e.nativeEvent.offsetX);
+  }
+
+  function handleMouseMove(e) {
+    if (!mouseDownFlags[props.index]) {
+      return;
+    }
+    const rect = myRef.current.getBoundingClientRect(); // relative to the viewport, and clientX too.
+    const x = Math.max(0, Math.min(myRef.current.clientWidth - 1, e.clientX - rect.left));
+    // console.log('mousemove', e.nativeEvent, e.nativeEvent.offsetX);
+    if (props.changeVar) {
+      props.changeVar(x / myRef.current.clientWidth);
+    }
+  }
+
+  function handleMouseUp(e) {
+    if (!mouseDownFlags[props.index]) {
+      return;
+    }
+    const rect = myRef.current.getBoundingClientRect();
+    const x = Math.max(0, Math.min(myRef.current.clientWidth - 1, e.clientX - rect.left));
+    // console.log('mouseup', e.nativeEvent, e.nativeEvent.offsetX);
+    if (props.changeVar) {
+      props.changeVar(x / myRef.current.clientWidth);
+    }
+    mouseDownFlags[props.index] = false;
+  }
+
+  return (
+    <div
+      className={`dragable-bar-wrapper ${props.className}`}
+      ref={myRef}
+      onClick={handleBarClick}>
+      <div
+        className="dragable-bar"
+        style={{ width: `${props.width * 100}%` }}></div>
+      <div
+        className="dragable-point"
+        onMouseDown={handleMouseDown}
+        style={{ left: `${props.width * 100}%` }}></div>
+    </div>
+  );
+}
+
+function MyPage() {
+
   const [active, setActive] = useState(false);
-  const [width, setWidth] = useState('50%');
-  const [volume, setVolume] = useState(false);
-  const [volumeWidth, setVolumeWidth] = useState('0');
+  const [volume, setVolume] = useState(0);
+  const [progress, setProgress] = useState(0);
   const [songIndex, setSongIndex] = useState(0);
 
   const audio = useRef(null);
-  const progressBar = useRef(null);
-  const volumeBar = useRef(null);
+  const musicAppRef = useRef(null);
+
+  useEffect(() => {
+    f();
+    audio.current.volume = 0;
+  }, []);
 
   useEffect(() => {
     if (active) {
@@ -47,22 +115,15 @@ function MyPage() {
 
   const handleTimeUpdate = (e) => {
     const { duration, currentTime } = e.target;
-    setWidth(`${currentTime / duration * 100}%`);
-  }
-
-  const handleProgressBarClick = (e) => {
-    const width = progressBar.current.clientWidth;
-    const clickX = e.nativeEvent.offsetX;
-    const duration = audio.current.duration;
-    audio.current.currentTime = clickX / width * duration;
+    setProgress(currentTime / duration);
   }
 
   const loadSong = () => {
-    setWidth(0);
+    setProgress(0);
   }
 
   const handleEnded = () => {
-    setWidth(0);
+    setProgress(0);
     handleNextClick();
   }
 
@@ -76,27 +137,32 @@ function MyPage() {
     loadSong();
   }
 
-  const handleVolumeClick = (e) => {
-    const width = volumeBar.current.clientWidth;
-    const clickX = e.nativeEvent.offsetX;
-    console.log(width, clickX);
-    if(clickX < 0) {
-      setVolume(!volume);
-      setVolumeWidth('0');
-      audio.current.volume = 0;
+  const handleVolumeClick = () => {
+    if (volume <= 0) {
+      setVolume(0.2);
+      audio.current.volume = 0.2;
     } else {
-      audio.current.volume = clickX / width;
-      setVolume(true);
-      setVolumeWidth(`${clickX / width * 100}%`);
+      setVolume(0);
+      audio.current.volume = 0;
     }
   }
 
-  const handleMouseDown = (e) => {
+  // percent: [0, 1]
+  const changeProgress = (percent) => {
+    const duration = audio.current.duration;
+    audio.current.currentTime = duration * percent;
+    setProgress(percent);
+  }
 
+  const changeVolume = (percent) => {
+    audio.current.volume = percent;
+    setVolume(percent);
   }
 
   return (
-    <div className="music-player">
+    <div
+      className="music-player"
+      ref={musicAppRef}>
       <div className="container">
         <h1>
           Music Player
@@ -106,12 +172,12 @@ function MyPage() {
 
         <div className={`player-container ${active ? 'active' : ''}`}>
           <div className="progress-bar-container">
-            <div className="progress-bar"
-              onClick={handleProgressBarClick}
-              onMouseDown={handleMouseDown}
-              ref={progressBar}>
-              <div className="progress" style={{ width: width }}></div>
-            </div>
+            <DragableBar
+              className="progress-bar"
+              musicAppRef={musicAppRef}
+              index={0}
+              changeVar={changeProgress}
+              width={progress} />
           </div>
           <div className="player-bar">
             <div className="img"
@@ -131,11 +197,16 @@ function MyPage() {
                 <i className="fas fa-forward"></i>
               </button>
             </div>
-            <div className={`volume-control-bar ${volume ? '' : 'volume-off'}`}
-              onClick={handleVolumeClick}
-              ref={volumeBar}>
-              <div className="volume-control"
-              style={{width: volumeWidth}}></div>
+            <div className="volume-control-wrapper">
+              <i
+                className={`fas ${volume > 0 ? 'fa-volume-up' : 'fa-volume-mute'}`}
+                onClick={handleVolumeClick}></i>
+              <DragableBar
+                className="volume-control-bar"
+                musicAppRef={musicAppRef}
+                index={1}
+                changeVar={changeVolume}
+                width={volume} />
             </div>
           </div>
         </div>
