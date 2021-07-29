@@ -6,12 +6,13 @@ import { Route, Switch, Link } from 'react-router-dom';
 
 import { f } from './App.js';
 // import { default as AnimatedNavigation } from './50projects/animated-navigation/index.jsx';
-import { default as RandomChoicePicker } from './50projects/random-choice-picker/index.jsx';
+// import { default as RandomChoicePicker } from './50projects/random-choice-picker/index.jsx';
 import { default as MovieApp } from './50projects/movie-app/index.jsx';
 // import { default as MusicWebapp } from './music-webapp/index.jsx';
 // import { default as MaterialUITutorial } from './material-ui-tutorial/index.jsx';
 import { default as MyProject } from './database-project/index.jsx';
 import { default as MusicPlayer } from './music-player/index.jsx';
+import { default as CodepenClone } from './codepen-clone/index.jsx';
 
 // function App() {
 //   return (
@@ -38,22 +39,23 @@ const projectDescs = [
   '一个简易的web版音乐播放器，有播放，暂停，前一首，后一首，调整进度，调整音量等功能',
   '一个简易的物流信息查询系统，实现的功能有：用户登陆注册等，产看货物的物流信息，发送货物等，后端是用nodejs和sqlite实现的，但是github page上没有后端，所以部分功能不能展示出来',
   '一个查询电影信息的web app，可以显示出电影的名称，简介和评分，还有按标题中的关键字查询的功能，使用了国外的api接口所以速度可能会有点慢',
-  '输入若干个按逗号隔开的项目后可以从里面随机挑选出一个，有动画效果'
+  '一个模仿codepen的实时代码编辑器, 可以编写html, css, js并且有实时的效果显示, 并且使用了sessionStorage保存数据'
 ];
 
 const projectImgs = [
   'music-player.jpg',
   'database-project.jpg',
   'movie-app.jpg',
-  'random-choice-picker.jpg'
+  'codepen-clone.jpg'
 ];
 
 const myProjectLinks = [
   'music-player',
   'project',
   'movie-app',
+  'codepen-clone'
   // 'animated-navigation',
-  'random-choice-picker',
+  // 'random-choice-picker',
   // 'music-webapp',
   // 'material-ui-tutorial'
 ];
@@ -61,8 +63,9 @@ const myProjects = [
   MusicPlayer,
   MyProject,
   MovieApp,
+  CodepenClone
   // AnimatedNavigation,
-  RandomChoicePicker,
+  // RandomChoicePicker,
   // MusicWebapp,
   // MaterialUITutorial
 ];
@@ -71,7 +74,7 @@ const myProjectNames = [
   '音乐播放器',
   '物流查询系统',
   '电影信息查询系统',
-  '随机选择器'
+  'codepen-clone'
 ];
 
 function App() {

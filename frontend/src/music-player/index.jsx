@@ -20,9 +20,34 @@ let mouseDownFlags = Array(2).fill(false);
 function DragableBar(props) {
 
   useEffect(() => {
+    function handleMouseMove(e) {
+      if (!mouseDownFlags[props.index]) {
+        return;
+      }
+      const rect = myRef.current.getBoundingClientRect(); // relative to the viewport, and clientX too.
+      const x = Math.max(0, Math.min(myRef.current.clientWidth - 1, e.clientX - rect.left));
+      // console.log('mousemove', e.nativeEvent, e.nativeEvent.offsetX);
+      if (props.changeVar) {
+        props.changeVar(x / myRef.current.clientWidth);
+      }
+    }
+
+    function handleMouseUp(e) {
+      if (!mouseDownFlags[props.index]) {
+        return;
+      }
+      const rect = myRef.current.getBoundingClientRect();
+      const x = Math.max(0, Math.min(myRef.current.clientWidth - 1, e.clientX - rect.left));
+      // console.log('mouseup', e.nativeEvent, e.nativeEvent.offsetX);
+      if (props.changeVar) {
+        props.changeVar(x / myRef.current.clientWidth);
+      }
+      mouseDownFlags[props.index] = false;
+    }
+
     props.musicAppRef.current.addEventListener('mousemove', handleMouseMove);
     props.musicAppRef.current.addEventListener('mouseup', handleMouseUp);
-  }, []);
+  }, [props]);
 
   const myRef = useRef(null);
 
@@ -37,34 +62,9 @@ function DragableBar(props) {
   }
 
   // click事件和mousedown等事件的offsetX的值不一样
-  function handleMouseDown(e) {
+  function handleMouseDown() {
     mouseDownFlags[props.index] = true;
     // console.log('mousedown', e.nativeEvent, e.nativeEvent.offsetX);
-  }
-
-  function handleMouseMove(e) {
-    if (!mouseDownFlags[props.index]) {
-      return;
-    }
-    const rect = myRef.current.getBoundingClientRect(); // relative to the viewport, and clientX too.
-    const x = Math.max(0, Math.min(myRef.current.clientWidth - 1, e.clientX - rect.left));
-    // console.log('mousemove', e.nativeEvent, e.nativeEvent.offsetX);
-    if (props.changeVar) {
-      props.changeVar(x / myRef.current.clientWidth);
-    }
-  }
-
-  function handleMouseUp(e) {
-    if (!mouseDownFlags[props.index]) {
-      return;
-    }
-    const rect = myRef.current.getBoundingClientRect();
-    const x = Math.max(0, Math.min(myRef.current.clientWidth - 1, e.clientX - rect.left));
-    // console.log('mouseup', e.nativeEvent, e.nativeEvent.offsetX);
-    if (props.changeVar) {
-      props.changeVar(x / myRef.current.clientWidth);
-    }
-    mouseDownFlags[props.index] = false;
   }
 
   return (

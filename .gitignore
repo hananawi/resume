@@ -4,4 +4,3 @@ node_modules
 *.db
 NeteaseCloudMusicApi
 *-lock.json
-build

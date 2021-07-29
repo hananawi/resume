@@ -138,7 +138,7 @@ body
         padding-block-start: 8rem
         flex-wrap: wrap
         justify-content: space-around
-        align-items: center
+        align-items: stretch
         .one
           transform: translateX(-50vw)
         .two
@@ -153,10 +153,14 @@ body
         .card-wrapper
           margin: 1rem 5%
           width: 35%
+          > a
+            height: 100%
+            display: block
         .card:hover
           .img
             animation: animImage 1.5s
         .card
+          height: 100%
           min-height: 20rem
           background-color: #297fb973
           padding: 2rem 1rem
