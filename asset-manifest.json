@@ -1,8 +1,8 @@
 {
   "files": {
-    "main.css": "/resume/static/css/main.fbe37852.chunk.css",
-    "main.js": "/resume/static/js/main.3691063f.chunk.js",
-    "main.js.map": "/resume/static/js/main.3691063f.chunk.js.map",
+    "main.css": "/resume/static/css/main.a42c9752.chunk.css",
+    "main.js": "/resume/static/js/main.5c50a3ab.chunk.js",
+    "main.js.map": "/resume/static/js/main.5c50a3ab.chunk.js.map",
     "runtime-main.js": "/resume/static/js/runtime-main.9058eac7.js",
     "runtime-main.js.map": "/resume/static/js/runtime-main.9058eac7.js.map",
     "static/css/2.9c6f23df.chunk.css": "/resume/static/css/2.9c6f23df.chunk.css",
@@ -22,7 +22,7 @@
     "movie-app.jpg": "/resume/de0512367531c57f68fc98eb60b6fcd3.jpg",
     "index.html": "/resume/index.html",
     "static/css/2.9c6f23df.chunk.css.map": "/resume/static/css/2.9c6f23df.chunk.css.map",
-    "static/css/main.fbe37852.chunk.css.map": "/resume/static/css/main.fbe37852.chunk.css.map",
+    "static/css/main.a42c9752.chunk.css.map": "/resume/static/css/main.a42c9752.chunk.css.map",
     "static/js/2.58c19119.chunk.js.LICENSE.txt": "/resume/static/js/2.58c19119.chunk.js.LICENSE.txt",
     "static/media/index.sass": "/resume/static/media/password.16706ddf.ttf",
     "static/media/password2.ttf": "/resume/static/media/password2.418cd3c7.ttf",
@@ -34,7 +34,7 @@
     "static/js/runtime-main.9058eac7.js",
     "static/css/2.9c6f23df.chunk.css",
     "static/js/2.58c19119.chunk.js",
-    "static/css/main.fbe37852.chunk.css",
-    "static/js/main.3691063f.chunk.js"
+    "static/css/main.a42c9752.chunk.css",
+    "static/js/main.5c50a3ab.chunk.js"
   ]
 }
