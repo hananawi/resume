@@ -13,6 +13,7 @@ import { default as MovieApp } from './50projects/movie-app/index.jsx';
 import { default as MyProject } from './database-project/index.jsx';
 import { default as MusicPlayer } from './music-player/index.jsx';
 import { default as CodepenClone } from './codepen-clone/index.jsx';
+import { useState } from 'react';
 
 // function App() {
 //   return (
@@ -41,6 +42,13 @@ const projectDescs = [
   '一个查询电影信息的web app，可以显示出电影的名称，简介和评分，还有按标题中的关键字查询的功能，使用了国外的api接口所以速度可能会有点慢',
   '一个模仿codepen的实时代码编辑器, 可以编写html, css, js并且有实时的效果显示, 并且使用了sessionStorage保存数据'
 ];
+
+const projectDescsEn = [
+  'A simple web music player that implements play, pause, previous song, next song, adjust progress and volume, and other functions',
+  'A simple logistic infomation query system, achieving the following functions: user login and register, query the info of commodity, send commodity. I used nodejs as backend but there is no backend on github page.',
+  'A web app that can query movie infomation, including movie name, synopsis and rating. It also can search movie by keywords in movie name. The app loads resources asynchronously.',
+  'A codepen clone web app, can display html page in realtime and used sessionStorage to store user\'s code.'
+]
 
 const projectImgs = [
   'music-player.jpg',
@@ -74,13 +82,22 @@ const myProjectNames = [
   '音乐播放器',
   '物流查询系统',
   '电影信息查询系统',
-  'codepen-clone'
+  'codepen clone'
 ];
+
+const myProjectNamesEn = [
+  'music player',
+  'logistic infomation query',
+  'movie infomation query',
+  'codepen clone'
+]
 
 function App() {
   useEffect(() => {
     f();
   }, []);
+
+  const [lang, setLang] = useState('en');
 
   function handleLinkClick(currentIdx) {
     const links = document.querySelectorAll('.catalog ul li a');
@@ -108,14 +125,14 @@ function App() {
             <li>
               <Link
                 to="/resume"
-                onClick={() => handleLinkClick(0)}>主页</Link>
+                onClick={() => handleLinkClick(0)}>{lang === 'en' ? 'Homepage' : '主页'}</Link>
             </li>
             {myProjectLinks.map((val, idx) => {
               return (
                 <li
                   key={val}
                   onClick={() => handleLinkClick(idx + 1)}>
-                  <Link to={`/resume/${val}`}>{myProjectNames[idx]}</Link>
+                  <Link to={`/resume/${val}`}>{lang === 'en' ? myProjectNamesEn[idx] : myProjectNames[idx]}</Link>
                 </li>
               );
             })}
@@ -150,17 +167,31 @@ function App() {
                     <li>
                       <a href="#contact">Contact</a>
                     </li>
+                    <li className="lang-list">
+                      <button className={lang === 'en' ? 'active' : ''} onClick={() => setLang('en')}>En</button>
+                      <button className={lang === 'en' ? '' : 'active'} onClick={() => setLang('zh')}>中</button>
+                    </li>
                   </ul>
                 </nav>
               </header>
 
               <main className="homepage">
-                <section className="self-intro" id="about">
-                  <h2>慎杰</h2>
-                  <h2>华南农业大学</h2>
-                  <p>热爱领域：前端, react, 数字图像处理, 神经网络</p>
-                  <p>熟悉的编程技能：html, css, javascript, react, python, C++</p>
-                </section>
+                {
+                  lang === 'en' ?
+                    <section className="self-intro" id="about">
+                      <h2>Jie Shen</h2>
+                      <h2>South China Agriculture University</h2>
+                      <p>Interested fields: frontend, react, digital image processing, deep learning</p>
+                      <p>Skills: html, css, javascript, react, python</p>
+                    </section>
+                    :
+                    <section className="self-intro" id="about">
+                      <h2>慎杰</h2>
+                      <h2>华南农业大学</h2>
+                      <p>热爱领域：前端, react, 数字图像处理, 神经网络</p>
+                      <p>熟悉的编程技能：html, css, javascript, react, python</p>
+                    </section>
+                }
 
                 <section className="my-projects" id="projects">
                   {
@@ -175,9 +206,9 @@ function App() {
                           }[index]
                             }`}>
                             <div className="img"
-                            style={{backgroundImage: `url(${require(`./assets/${projectImgs[index]}`).default})`}}></div>
-                            <h4>{myProjectNames[index]}</h4>
-                            <div className="desc">{projectDescs[index]}</div>
+                              style={{ backgroundImage: `url(${require(`./assets/${projectImgs[index]}`).default})` }}></div>
+                            <h4>{lang === 'en' ? myProjectNamesEn[index] : myProjectNames[index]}</h4>
+                            <div className="desc">{lang === 'en' ? projectDescsEn[index] : projectDescs[index]}</div>
                           </div>
                         </Link>
                       </div>
@@ -196,7 +227,7 @@ function App() {
                   </li>
                   <li>
                     <i className="fas fa-envelope"></i>
-                    <span>邮箱: 1484740339@qq.com</span>
+                    <span>{lang === 'en' ? 'email: antaroezio@gmail.com' : '邮箱: 1484740339@qq.com'}</span>
                   </li>
                 </ul>
               </footer>
