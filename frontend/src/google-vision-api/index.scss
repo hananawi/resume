@@ -1,0 +1,145 @@
+@import url(https://fonts.googleapis.com/css?family=Source+Code+Pro:400);
+
+.google-vision-api {
+  background-color: #353b48;
+  height: 100vh;
+  padding: 1rem;
+  text-align: center;
+  position: relative;
+
+  .title {
+    margin-block-start: 0;
+  }
+
+  .form-wrapper {
+    width: 80%;
+    height: 75%;
+    margin: 1rem auto;
+    border: 5px dashed #7f8fa6;
+    padding: 2rem;
+    overflow-y: hidden;
+
+    > * {
+      height: 100%;
+      margin-block-end: 2rem;
+      transition: transform 0.5s ease;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      font-size: 24px;
+    }
+
+    form.active {
+      transform: translateY(0);
+    }
+
+    .preview.active {
+      transform: translateY(calc(-100% - 2rem));
+    }
+
+    .result.active {
+      transform: translateY(calc(-200% - 2rem));
+    }
+
+    form {
+      cursor: pointer;
+      transform: translateY(calc(-100% - 2rem));
+
+      > div {
+        padding: 1rem;
+      }
+
+      #image {
+        display: none;
+      }
+
+      .icon {
+        font-size: 256px;
+        display: block;
+        text-align: center;
+      }
+    }
+
+    .preview {
+      width: 40%;
+      margin: 0 auto;
+      img {
+        max-width: 100%;
+        max-height: 100%;
+      }
+      .image-name {
+        padding: 1rem;
+      }
+    }
+
+    .result {
+      overflow: auto;
+    }
+  }
+
+  button {
+    font-size: 1.5rem;
+    margin: 0 2rem;
+  }
+
+  button.forbidden {
+    cursor: not-allowed;
+  }
+
+  .animated-loading {
+    position: absolute;
+    margin: auto;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    line-height: 3rem;
+    font-size: 3rem;
+    height: 3rem;
+    color: #fff;
+    text-shadow: 0 0 10px rgba(50, 255, 50, 0.5), 0 0 5px rgba(100, 255, 100, 0.5);
+    font-family: 'Source Code Pro', monospace;
+    user-select: none;
+    > span {
+      display: inline-block;
+      position: relative;
+      z-index: 1;
+      transform: translateX(100%) scale(0.6);
+      transition: transform 0.5s ease;
+      // cursor: default;
+    }
+
+    > span.done {
+      transform: translateX(0) scale(1);
+      color: #6f6;
+    }
+  }
+
+  .animated-loading::before {
+    content: '';
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    backdrop-filter: blur(10px);
+  }
+
+  .animated-loading::after {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: linear-gradient(transparent 0%, rgba(10, 16, 10, 0.5) 50%);
+    // z-index: 2;
+  }
+  // padding: 2rem;
+  // color: #000;
+  // .result {
+  //   position: relative;
+  //   width: 70%;
+  //   margin: 2rem auto 0;
+  // }
+}

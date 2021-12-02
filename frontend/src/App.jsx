@@ -1,7 +1,7 @@
 // import logo from './logo.svg';
 import './App.sass';
 
-import React, { useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Route, Switch, Link } from 'react-router-dom';
 
 import { f } from './App.js';
@@ -10,10 +10,10 @@ import { f } from './App.js';
 import { default as MovieApp } from './50projects/movie-app/index.jsx';
 // import { default as MusicWebapp } from './music-webapp/index.jsx';
 // import { default as MaterialUITutorial } from './material-ui-tutorial/index.jsx';
-import { default as MyProject } from './database-project/index.jsx';
+// import { default as MyProject } from './database-project/index.jsx';
 import { default as MusicPlayer } from './music-player/index.jsx';
 import { default as CodepenClone } from './codepen-clone/index.jsx';
-import { useState } from 'react';
+import { default as GoogleVisionApi } from './google-vision-api/index.jsx';
 
 // function App() {
 //   return (
@@ -38,28 +38,31 @@ import { useState } from 'react';
 
 const projectDescs = [
   '一个简易的web版音乐播放器，有播放，暂停，前一首，后一首，调整进度，调整音量等功能',
-  '一个简易的物流信息查询系统，实现的功能有：用户登陆注册等，产看货物的物流信息，发送货物等，后端是用nodejs和sqlite实现的，但是github page上没有后端，所以部分功能不能展示出来',
+  // '一个简易的物流信息查询系统，实现的功能有：用户登陆注册等，产看货物的物流信息，发送货物等，后端是用nodejs和sqlite实现的，但是github page上没有后端，所以部分功能不能展示出来',
+  '一个文本检测应用，可以框出用户上传的图片上的文本，并且可以用可选择的文本替换图中的文本，方便复制黏贴',
   '一个查询电影信息的web app，可以显示出电影的名称，简介和评分，还有按标题中的关键字查询的功能，使用了国外的api接口所以速度可能会有点慢',
   '一个模仿codepen的实时代码编辑器, 可以编写html, css, js并且有实时的效果显示, 并且使用了sessionStorage保存数据'
 ];
 
 const projectDescsEn = [
   'A simple web music player that implements play, pause, previous song, next song, adjust progress and volume, and other functions',
-  'A simple logistic infomation query system, achieving the following functions: user login and register, query the info of commodity, send commodity. I used nodejs as backend but there is no backend on github page.',
+  // 'A simple logistic infomation query system, achieving the following functions: user login and register, query the info of commodity, send commodity. I used nodejs as backend but there is no backend on github page.',
+  'A text detection app that can mask text that occurs on an image with bounding boxes and replace it with selectable text, which can help copy and paste',
   'A web app that can query movie infomation, including movie name, synopsis and rating. It also can search movie by keywords in movie name. The app loads resources asynchronously.',
   'A codepen clone web app, can display html page in realtime and used sessionStorage to store user\'s code.'
 ]
 
 const projectImgs = [
   'music-player.jpg',
-  'database-project.jpg',
+  'text-detection.jpg',
   'movie-app.jpg',
   'codepen-clone.jpg'
 ];
 
 const myProjectLinks = [
   'music-player',
-  'project',
+  // 'project',
+  'text-detection',
   'movie-app',
   'codepen-clone'
   // 'animated-navigation',
@@ -69,7 +72,8 @@ const myProjectLinks = [
 ];
 const myProjects = [
   MusicPlayer,
-  MyProject,
+  // MyProject,
+  GoogleVisionApi,
   MovieApp,
   CodepenClone
   // AnimatedNavigation,
@@ -80,16 +84,18 @@ const myProjects = [
 
 const myProjectNames = [
   '音乐播放器',
-  '物流查询系统',
+  // '物流查询系统',
+  'text detection',
   '电影信息查询系统',
   'codepen clone'
 ];
 
 const myProjectNamesEn = [
-  'music player',
-  'logistic infomation query',
-  'movie infomation query',
-  'codepen clone'
+  'Music Player',
+  // 'logistic infomation query',
+  'Text Detection',
+  'Movie Infomation Query',
+  'Codepen Clone'
 ]
 
 function App() {
@@ -227,7 +233,7 @@ function App() {
                   </li>
                   <li>
                     <i className="fas fa-envelope"></i>
-                    <span>{lang === 'en' ? 'email: antaroezio@gmail.com' : '邮箱: 1484740339@qq.com'}</span>
+                    <span>{lang === 'en' ? 'email: hananawi@outlook.com' : '邮箱: hananawi@outlook.com'}</span>
                   </li>
                 </ul>
               </footer>
