@@ -1,19 +1,20 @@
 {
   "files": {
-    "main.css": "/resume/static/css/main.4e073d76.chunk.css",
-    "main.js": "/resume/static/js/main.24b7555c.chunk.js",
-    "main.js.map": "/resume/static/js/main.24b7555c.chunk.js.map",
+    "main.css": "/resume/static/css/main.94ee33cf.chunk.css",
+    "main.js": "/resume/static/js/main.5c068fed.chunk.js",
+    "main.js.map": "/resume/static/js/main.5c068fed.chunk.js.map",
     "runtime-main.js": "/resume/static/js/runtime-main.eb8d9dda.js",
     "runtime-main.js.map": "/resume/static/js/runtime-main.eb8d9dda.js.map",
     "static/css/2.9c6f23df.chunk.css": "/resume/static/css/2.9c6f23df.chunk.css",
-    "static/js/2.503e7c7a.chunk.js": "/resume/static/js/2.503e7c7a.chunk.js",
-    "static/js/2.503e7c7a.chunk.js.map": "/resume/static/js/2.503e7c7a.chunk.js.map",
+    "static/js/2.4343e95c.chunk.js": "/resume/static/js/2.4343e95c.chunk.js",
+    "static/js/2.4343e95c.chunk.js.map": "/resume/static/js/2.4343e95c.chunk.js.map",
     "static/js/3.2033875b.chunk.js": "/resume/static/js/3.2033875b.chunk.js",
     "static/js/3.2033875b.chunk.js.map": "/resume/static/js/3.2033875b.chunk.js.map",
     "music-player.jpg": "/resume/0099f5a8b8f2c9fea24fa3d660218efa.jpg",
     "易安难安.jpg": "/resume/04b82b3d7f5ef8fa2d5f180b0185e265.jpg",
     "random-choice-picker.jpg": "/resume/0819175273375320fc679e26d3471426.jpg",
     "megumin.jpg": "/resume/42860acd80a8fd36b87574be445648f1.jpg",
+    "text-detection.jpg": "/resume/6c8cbdf5a3955402e483f39506a8252c.jpg",
     "test.png": "/resume/707b6a6e34879d14ee028af1d6fd76ef.png",
     "index.sass": "/resume/9aaf947bc25997ee386e9963b49e0400.jpg",
     "database-project.jpg": "/resume/a416b733c5ab6ba7118e1d97b9ee6c93.jpg",
@@ -22,8 +23,8 @@
     "movie-app.jpg": "/resume/de0512367531c57f68fc98eb60b6fcd3.jpg",
     "index.html": "/resume/index.html",
     "static/css/2.9c6f23df.chunk.css.map": "/resume/static/css/2.9c6f23df.chunk.css.map",
-    "static/css/main.4e073d76.chunk.css.map": "/resume/static/css/main.4e073d76.chunk.css.map",
-    "static/js/2.503e7c7a.chunk.js.LICENSE.txt": "/resume/static/js/2.503e7c7a.chunk.js.LICENSE.txt",
+    "static/css/main.94ee33cf.chunk.css.map": "/resume/static/css/main.94ee33cf.chunk.css.map",
+    "static/js/2.4343e95c.chunk.js.LICENSE.txt": "/resume/static/js/2.4343e95c.chunk.js.LICENSE.txt",
     "static/media/password.ttf": "/resume/static/media/password.16706ddf.ttf",
     "static/media/password2.ttf": "/resume/static/media/password2.418cd3c7.ttf",
     "static/media/忘川风华录,星尘Minus,海伊 - 惊鹊.mp3": "/resume/static/media/忘川风华录,星尘Minus,海伊 - 惊鹊.a2f0be43.mp3",
@@ -33,8 +34,8 @@
   "entrypoints": [
     "static/js/runtime-main.eb8d9dda.js",
     "static/css/2.9c6f23df.chunk.css",
-    "static/js/2.503e7c7a.chunk.js",
-    "static/css/main.4e073d76.chunk.css",
-    "static/js/main.24b7555c.chunk.js"
+    "static/js/2.4343e95c.chunk.js",
+    "static/css/main.94ee33cf.chunk.css",
+    "static/js/main.5c068fed.chunk.js"
   ]
 }
